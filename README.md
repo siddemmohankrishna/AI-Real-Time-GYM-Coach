@@ -97,6 +97,9 @@ The application follows this workflow:
                         │
                         ▼
                 🔊 Voice Feedback
+
+
+---
 | TechnologyPurpose |
 
 ## 🏋️ Supported Exercises
