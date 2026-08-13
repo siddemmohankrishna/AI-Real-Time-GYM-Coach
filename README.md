@@ -59,7 +59,7 @@ The application analyzes the user's body movements through a live camera, counts
 
 The application follows this workflow:
 
-```text
+```
               ┌───────────────────┐
               │   Webcam Input    │
               └─────────┬─────────┘
@@ -97,10 +97,9 @@ The application follows this workflow:
                         │
                         ▼
                 🔊 Voice Feedback
-
+```
 
 ---
-| TechnologyPurpose |
 
 ## 🏋️ Supported Exercises
 
@@ -169,6 +168,10 @@ Tracks:
 | **PyAV** | Video frame processing |
 
 ---
+
+## 📁 Project Structure
+
+```
 AI-Real-Time-GYM-Coach/
 │
 ├── core/
@@ -224,57 +227,90 @@ AI-Real-Time-GYM-Coach/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+
+---
 
 ## ⚙️ Installation
 
 ### 1. Clone the Repository
 
-Clone the project from GitHub:
-
 ```bash
 git clone https://github.com/siddemmohankrishna/AI-Real-Time-GYM-Coach.git
+cd AI-Real-Time-GYM-Coach
+```
 
+### 2. Create a Virtual Environment
 
-### 2. create a Virtual Environment
 Python 3.11 is recommended for this project.
 
 ```bash
 python -m venv .venv
+```
 
-Activate the virtual environment.
+Activate the virtual environment:
 
 ```bash
-.venv\Scripts\Activate.ps1(WINDOWS POWERSHELL)
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# macOS / Linux
+source .venv/bin/activate
+```
 
 ### 3. Install Dependencies
-Install the required Python Packages using pip:
+
+Install the required Python packages using pip:
 
 ```bash
 pip install -r requirements.txt
+```
 
+---
 
-### How it will look on GitHub
+## 🔑 Configure Groq API
 
-You'll get clean sections like:
+You'll need a Groq API key for the AI coaching feature. Set it up using either method below.
 
-**⚙️ Installation**  
-→ Clone Repository  
-→ Create Virtual Environment  
-→ Install Dependencies  
+**Option 1 — Environment Variable**
 
-**🔑 Configure Groq API**  
-→ Environment variable  
-→ Streamlit Secrets  
+```bash
+# Windows PowerShell
+$env:GROQ_API_KEY="your_api_key_here"
 
-**▶️ Run the Application**  
-→ Start Streamlit  
-→ `http://localhost:8501`
+# macOS / Linux
+export GROQ_API_KEY="your_api_key_here"
+```
 
-This is the correct Markdown structure—**don't put extra triple backticks around the entire README section**, only around the individual commands/code blocks.
+**Option 2 — Streamlit Secrets**
+
+Create a `.streamlit/secrets.toml` file in the project root:
+
+```toml
+GROQ_API_KEY = "your_api_key_here"
+```
+
+---
+
+## ▶️ Run the Application
+
+Start the Streamlit app:
+
+```bash
+streamlit run main.py
+```
+
+Then open your browser and go to:
+
+```
+http://localhost:8501
+```
+
+---
 
 ## 👨‍💻 Author
 
-**Siddem Mohan Krishna**  
+**Siddem Mohan Krishna**
 B.Sc. Data Science Student
 
 Interested in **AI, Machine Learning, Data Science, Computer Vision, and Analytics**.
